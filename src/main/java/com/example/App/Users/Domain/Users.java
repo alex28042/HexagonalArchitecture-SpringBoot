@@ -3,7 +3,7 @@ package com.example.App.Users.Domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "users")
+@Document(collection = "users")
 public class Users {
     @Id
     private String id;
