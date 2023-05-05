@@ -3,10 +3,7 @@ package com.example.App.Users.Application;
 import com.example.App.Users.Application.UserService;
 import com.example.App.Users.Domain.Users;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -19,5 +16,7 @@ public class UserController {
         return userService.save(user);
     }
 
-    // other methods
+    @GetMapping("/{email}")
+    public Users findByEmail(@PathVariable String email) { return userService.findByEmail(email); }
+
 }
